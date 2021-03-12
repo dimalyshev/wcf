@@ -231,7 +231,10 @@ namespace System.ServiceModel.Channels
                 _method = value ?? throw DiagnosticUtility.ExceptionUtility.ThrowHelperArgumentNull(nameof(value));
             }
         }
-
+        
+        // proxy fully specified (with credetials and so on)
+        public IWebProxy Proxy { get; set; }
+        
         [DefaultValue(HttpTransportDefaults.ProxyAddress)]
         [TypeConverter(typeof(UriTypeConverter))]
         public Uri ProxyAddress { get; set; }
